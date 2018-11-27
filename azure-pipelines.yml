@@ -20,3 +20,13 @@ steps:
     azureContainerRegistry: adventworks.azurecr.io
     command: 'Push an image'
 
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Azure App Service Deploy: adventworkstest1'
+  inputs:
+    azureSubscription: 'Build_Eng (3f56da7f-5953-4018-8ca8-e20dbfa0a7e2)'
+    appType: webAppContainer
+    WebAppName: adventworkstest1
+    DockerNamespace: adventworks.azurecr.io
+    DockerRepository: 'adventworks/pipelines-javascript'
+    DockerImageTag: '$(Build.BuildId)'
+
