@@ -6,13 +6,12 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
-variables:
-  imageName: 'contoso:$(build.buildId)'
-  dockerId: adventworks
-
 steps:
-- script: docker build -f Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
-  displayName: 'docker build'
+- task: Docker@1
+  displayName: 'Build an image'
+  inputs:
+    azureSubscriptionEndpoint: 'Build_Eng (3f56da7f-5953-4018-8ca8-e20dbfa0a7e2)'
+    azureContainerRegistry: adventworks.azurecr.io
 
 - task: Docker@1
   displayName: 'Push an image'
@@ -20,8 +19,3 @@ steps:
     azureSubscriptionEndpoint: 'Build_Eng (3f56da7f-5953-4018-8ca8-e20dbfa0a7e2)'
     azureContainerRegistry: adventworks.azurecr.io
     command: 'Push an image'
-    imageName: $(imageName)
-
-
-
-
