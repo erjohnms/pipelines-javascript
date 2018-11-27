@@ -8,9 +8,10 @@ pool:
 
 variables:
   imageName: 'contoso:$(build.buildId)'
+  dockerId: adventworks
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: docker build -f Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
   displayName: 'docker build'
 
 - task: Docker@1
