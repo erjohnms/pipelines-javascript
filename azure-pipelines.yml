@@ -30,3 +30,8 @@ steps:
 #     DockerRepository: 'erjohnms/pipelines-javascript'
 #     DockerImageTag: '$(Build.BuildId)'
 
+- task: Docker@1
+  inputs:
+    azureSubscriptionEndpoint: VCWorkflows_Eng
+    azureContainerRegistry: erjohncontainerregistry.azurecr.io
+    command: Push an image
