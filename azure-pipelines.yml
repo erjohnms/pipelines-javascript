@@ -10,8 +10,8 @@ steps:
 - task: Docker@1
   displayName: 'Build an image'
   inputs:
-    azureSubscriptionEndpoint: 'erjohnContainerRegistry'
-    azureContainerRegistry: erjohnContainerRegistry.azurecr.io
+    azureSubscriptionEndpoint: VCWorkflows_Eng
+    azureContainerRegistry: erjohncontainerregistry.azurecr.io
 
 # - task: Docker@1
 #   displayName: 'Push an image'
