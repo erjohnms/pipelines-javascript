@@ -13,25 +13,9 @@ steps:
     azureSubscriptionEndpoint: VCWorkflows_Eng
     azureContainerRegistry: erjohncontainerregistry.azurecr.io
 
-# - task: Docker@1
-#   displayName: 'Push an image'
-#   inputs:
-#     azureSubscriptionEndpoint: 'erjohnContainerRegistry'
-#     azureContainerRegistry: erjohnContainerRegistry.azurecr.io
-#     command: 'Push an image'
+- task: Docker@1
+  inputs:
+    azureSubscriptionEndpoint: VCWorkflows_Eng
+    azureContainerRegistry: erjohncontainerregistry.azurecr.io
 
-# - task: AzureRmWebAppDeployment@4
-#   displayName: 'Azure App Service Deploy: adventworkstest1'
-#   inputs:
-#     azureSubscription: 'erjohnContainerRegistry'
-#     appType: webAppContainer
-#     WebAppName: erjohnWebApp
-#     DockerNamespace: erjohnContainerRegistry.azurecr.io
-#     DockerRepository: 'erjohnms/pipelines-javascript'
-#     DockerImageTag: '$(Build.BuildId)'
 
-# - task: Docker@1
-#   inputs:
-#     azureSubscriptionEndpoint: VCWorkflows_Eng
-#     azureContainerRegistry: erjohncontainerregistry.azurecr.io
-#     command: Push an image
