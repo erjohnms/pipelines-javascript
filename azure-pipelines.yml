@@ -7,15 +7,5 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: Docker@1
-  displayName: 'Build an image'
-  inputs:
-    azureSubscriptionEndpoint: VCWorkflows_Eng
-    azureContainerRegistry: erjohncontainerregistry.azurecr.io
-
-- task: Docker@1
-  inputs:
-    azureSubscriptionEndpoint: VCWorkflows_Eng
-    azureContainerRegistry: erjohncontainerregistry.azurecr.io
 
 
