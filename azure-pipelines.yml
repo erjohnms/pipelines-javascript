@@ -12,4 +12,5 @@ steps:
     connectedServiceNameARM: 'erjohnContainerRegistry'
     scriptLocation: 'inlineScript'
     inlineScript: 'az resource list --name ''Resource'''
+    scriptPath: 'inlineScript'
 
