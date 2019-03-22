@@ -7,5 +7,9 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-
+- task: AzureCLI@1
+  inputs:
+    connectedServiceNameARM: 'erjohnContainerRegistry'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az resource list --name ''Resource'''
 
