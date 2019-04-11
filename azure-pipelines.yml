@@ -7,11 +7,9 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: AzureCLI@1
-  inputs:
-    connectedServiceNameARM: 'erjohnContainerRegistry'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az resource list --name ''erjohnWebApp'''
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'todo.txt'
+- task: CmdLine@2
+  inputs:
+    script: 'echo $(Agent.TempDirectory)'
