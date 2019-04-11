@@ -19,8 +19,4 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'cat /home/vsts/work/_temp/todo.txt'
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'cat todo.txt'
+    script: 'Write-Host cat /home/vsts/work/_temp/todo.txt'
