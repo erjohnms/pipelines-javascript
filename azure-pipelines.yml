@@ -19,5 +19,5 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: '$test = cat /home/vsts/work/_temp/todo.txt
+    script: '$test = cat /home/vsts/work/_temp/todo.txt;
              Write-Host $test'
