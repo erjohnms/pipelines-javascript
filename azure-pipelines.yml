@@ -13,3 +13,9 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'echo $(Agent.TempDirectory)'
+- task: CmdLine@2
+  inputs:
+    script: 'cat todo.txt'
+- task: CmdLine@2
+  inputs:
+    script: 'cat /home/vsts/work/_temp/todo.txt'
