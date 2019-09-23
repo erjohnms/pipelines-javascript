@@ -6,17 +6,9 @@
 pool: Default
 
 steps:
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'todo.txt'
-- task: CmdLine@2
-  inputs:
-    script: 'echo $(Agent.TempDirectory)'
-- task: CmdLine@2
-  inputs:
-    script: 'cat /home/vsts/work/_temp/todo.txt'
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: '$test = cat /home/vsts/work/_temp/todo.txt;
-             Write-Host $test'
+  - task: CmdLine@2
+    inputs:
+      script: |
+        echo Write your commands here
+        
+        echo Hello world
