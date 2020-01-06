@@ -1,7 +1,7 @@
 # Script to deploy the app
 # This file is needed only when you want to deploy the app to a Linux VM
 
-# install node
+# install nodeasdf
 pushd .
 cd ~
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
